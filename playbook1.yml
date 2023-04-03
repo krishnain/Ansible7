@@ -1,6 +1,6 @@
 ---
 - name: Create user 
-  hosts: all
+  hosts: dbserver
   tasks:
     - name: User creation
       user:
