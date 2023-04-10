@@ -1,0 +1,5 @@
+---
+- name: copy tomcat-users.xl file
+  copy:
+    src: "{{f}}"
+    dest: "{{g}}"
