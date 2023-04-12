@@ -1,0 +1,16 @@
+---
+- name: Install git based on OS version
+  hosts: all
+  tasks:
+    - name: Install git using apt modules on Ubuntu
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+    - name: Install git using yum modules on Redhat
+      yum:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "RedHat" or ansible_distribution == "Centos"
